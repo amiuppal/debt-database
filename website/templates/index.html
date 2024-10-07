@@ -40,17 +40,15 @@
             <div class="main__container">
                 <div class="main__content">
                     <h1>Median Debt by UK Region<h1>
+                    <div class="map__container">
+                        <div id="map"></div>
+                    </div>
                 </div>
             </div>
         </div>
-
-        <!-- Map -->
-        <div class="map__container">
-            <div id="map"></div>
-        </div>
         <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
         <script>
-            var map = L.map('map').setView([54.5, -3], 6); 
+            var map = L.map('map').setView([54.5, -3], 5); 
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map); 
     
             fetch("{% static 'website/map.geojson' %}")
