@@ -1,3 +1,85 @@
-h1 {
-    color: red
+* /* Navbar CSS */ {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+} 
+.navbar {
+    background: #ffffff;
+    height: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+.navbar__container {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+.logo {
+    width: 140px;
+    height: auto;  
+    display: inline-block; 
+  }
+.navbar__menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    text-align: center;
+}
+
+.navbar__item {
+    height: 70px;
+}
+
+.navbar__links {
+    color:#529ca4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 0 1rem;
+    height: 100%;
+}
+.navbar__links:hover {
+    color:rgb(155, 224, 201);
+    transition: all 0.3 ease;
+}
+
+/* Main Section CSS */
+.main {
+    background-color:aliceblue;
+}
+.main__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-self: center;
+    margin: 0 auto;
+    height: 90vh;
+    background-color:aliceblue;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    padding: 0 40px;
+    position: relative;
+}
+.main__content h1 {
+font-size: 2.5rem;
+color:#3896a2;
+position: absolute;
+top: 0;
+left: 50%;
+transform: translateX(-50%);
+margin-top: 20px;
+text-align: center;
 }
