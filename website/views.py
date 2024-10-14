@@ -5,16 +5,18 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import permissions
 from django.conf import settings
-import json 
+from .serializers import RegionSerializer
 
 def index(request):
     return render(request, 'index.html', {})
     
 class RegionData(APIView):
     permission_classes = [permissions.AllowAny]
+
     def get(self, request, region_name, *args, **kwargs):
-        df = pd.read_excel('data/debtstats.xls')
-        region_data = df[df['region_name'] == region_name]
-        if region_data.empty:
-            return Response({'error': 'No data found'}, status=404)
-        return Response(region_data.to_json(orient='records'), status=200)
+        try:
+            region_data = Region.objects.get(name=region_name)  
+            serializer = RegionSerializer(region_data)  
+            return Response(serializer.data, status=200)
+        except Region.DoesNotExist:
+            return Response({'error': 'No data found.'}, status=404)
