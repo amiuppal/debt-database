@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react';
-import './styles.css';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import { MapContainer, TileLayer } from 'react-leaflet';
+import axios from 'axios'; 
 
 function MapComponent({ onRegionSelect }) {
   useEffect(() => {
@@ -20,10 +19,10 @@ function MapComponent({ onRegionSelect }) {
             color: 'gray',
             fillOpacity: 0.1,
           }),
-          onEachFeature: function(feature, layer) {
+          onEachFeature: function (feature, layer) {
             let tooltip;
 
-            layer.on('mouseover', function(e) {
+            layer.on('mouseover', function (e) {
               const regionName = feature.properties.name;
 
               tooltip = L.tooltip({
@@ -37,29 +36,31 @@ function MapComponent({ onRegionSelect }) {
               tooltip.addTo(map);
             });
 
-            layer.on('mouseout', function() {
+            layer.on('mouseout', function () {
               if (tooltip) {
                 map.removeLayer(tooltip);
                 tooltip = null;
               }
             });
 
-            layer.on('click', (e) => {
-              const regionID = feature.properties.name;
-              fetchRegionData(regionID);  
+            layer.on('click', () => {
+              const regionID = feature.properties.name; 
+              fetchRegionData(regionID); 
             });
-          },  
+          },
         }).addTo(map);
       });
 
-    const fetchRegionData = (regionID) => {
-      fetch(`/api/region-data/${regionID}`)
-        .then((response) => response.json())
-        .then((data) => {
-          console.log(data); 
-          onRegionSelect(data); 
+const fetchRegionData = (regionID) => {
+      axios
+        .get(`/api/region-data/${regionID}`) 
+        .then((response) => {
+          console.log(response.data); 
+          onRegionSelect(response.data);
         })
-        .catch((error) => console.error('Error fetching region data:', error));
+        .catch((error) => {
+          console.error('Error fetching region data:', error); 
+        });
     };
   }, [onRegionSelect]);
 
