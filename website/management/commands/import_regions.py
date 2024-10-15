@@ -14,9 +14,9 @@ class Command(BaseCommand):
                 percentage=row['percentage'],
                 median=row['median'],
                 percentile_25=row['percentile_25'],
-                percentile_75=['percentile_75'],
-                frequency=['frequency'],
-                frequency_legend=['frequency_legend'],
+                percentile_75=row['percentile_75'],
+                frequency=row['frequency'],
+                frequency_legend=row['frequency_legend'],
             )
 
         self.stdout.write(self.style.SUCCESS('Data import successful.'))
