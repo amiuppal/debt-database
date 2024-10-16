@@ -21,7 +21,7 @@ export default function App() {
           {/* Sidebar */}
           <div className="sidebar">
             <h2>Select a region to view its debt statistics</h2>
-            <p>Just hover for the region name!</p>
+            <p>Just hover to view region name!</p>
             {selectedRegionData && (
               <div className="region-name">
                 <h3>Region:</h3>
@@ -41,23 +41,23 @@ export default function App() {
           {selectedRegionData ? (
             <>
               <div className="statistic">
-                <strong>Percentage of Households with Financial Debt:</strong>
-                <p>{selectedRegionData.percentage}</p>
+                <strong>Households with Financial Debt:</strong>
+                <p>{selectedRegionData.percentage + "%"}</p>
               </div>
               <div className="statistic">
-                <strong>Median:</strong>
-                <p>{selectedRegionData.median}</p>
+                <strong>Median Household Debt:</strong>
+                <p>{"£" + selectedRegionData.median}</p>
               </div>
               <div className="statistic">
-                <strong>25th Percentile:</strong>
-                <p>{selectedRegionData.percentile_25}</p>
+                <strong>25th Percentile Household Debt:</strong>
+                <p>{"£" + selectedRegionData.percentile_25}</p>
               </div>
               <div className="statistic">
-                <strong>75th Percentile:</strong>
-                <p>{selectedRegionData.percentile_75}</p>
+                <strong>75th Percentile Household Debt:</strong>
+                <p>{"£" + selectedRegionData.percentile_75}</p>
               </div>
               <div className="statistic">
-                <strong>Frequency:</strong>
+                <strong>Household Debt Frequency:</strong>
                 <p>{selectedRegionData.frequency}</p>
               </div>
             </>
