@@ -1,7 +1,7 @@
 from django.db import models
 
 class Region(models.Model):
-    region_name = models.CharField(max_length=30)
+    region_name = models.CharField(max_length=50)
     percentage = models.IntegerField()
     median = models.IntegerField()
     percentile_25 = models.IntegerField()
