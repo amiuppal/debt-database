@@ -17,18 +17,26 @@ All data sourced from the Office for National Statistics Wealth and Assets Surve
 
 ## To Run
 ### Backend:
-- cd debt-database
-- pipenv shell
-- pip install
-- python manage.py migrate
-- python manage.py runserver
+`cd debt-database`
+
+`pipenv shell`
+
+`pipenv install`
+
+`python manage.py migrate`
+
+`python manage.py runserver`
+
   
 This will start the Django server on the localhost:8000 port.
 
 ### Frontend:
-- cd debt-database
-- cd react-frontend
-- npm i
-- npm start
+`cd debt-database`
+
+`cd react-frontend`
+
+`npm i`
+
+`npm start`
   
 This will start the React server on the localhost:3000 port.
