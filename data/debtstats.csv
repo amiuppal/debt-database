@@ -1,0 +1,12 @@
+region_name,percentage,median,percentile_25,percentile_75,frequency,frequency_legend
+North East,53,"3900","1000","12500","617000",low
+North West,50,"4500","1000","11000","1487000",high
+Yorkshire & the Humber,54,"5200","1000","11900","1209000",medium
+East Midlands,53,"6400","1400","12900","1001000",medium
+West Midlands,47,"4800","1100","11600","1118000",medium
+East of England,49,"4800","1300","13000","1233000",medium
+London,46,"5000","1200","14900","1533000",high
+South East,46,"4800","1500","12600","1727000",high
+South West,50,"5900","1600","14700","1172000",medium
+Wales,47,"3800","1000","12500","636000",low
+Scotland,47,"4100","1000","10200","1161000",medium
