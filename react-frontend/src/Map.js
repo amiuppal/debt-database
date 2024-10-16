@@ -6,10 +6,15 @@ import http from "./http-common";
 function MapComponent({ onRegionSelect }) {
   useEffect(() => {
     if (!document.getElementById("map")._leaflet_id) {
-      const map = L.map("map").setView([54.5, -3], 5);
-      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png").addTo(
-        map
-      );
+      const map = L.map("map", {
+        center: [54.5, -3],  
+        zoom: 5, 
+        zoomControl: false,  
+        scrollWheelZoom: false, 
+        doubleClickZoom: false,  
+        dragging: true
+      });
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png").addTo(map);
 
       fetch("/map.geojson")
         .then((response) => response.json())
@@ -77,7 +82,7 @@ function MapComponent({ onRegionSelect }) {
 
   return (
     <div className="map__container">
-      <div id="map" style={{ height: "375px", width: "100%" }}></div>
+      <div id="map" style={{ height: "100%", width: "100%" }}></div>
     </div>
   );
 }

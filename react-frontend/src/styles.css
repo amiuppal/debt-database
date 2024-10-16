@@ -1,125 +1,119 @@
 /* Global Styles */
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
 /* Navbar Styles */
 .navbar {
-  background: #ffffff;
-  height: 109px;
+  background-color: #81a3b5;
+  height: 70px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.2rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
   z-index: 999;
 }
-.navbar__container {
-  display: flex;
-  justify-content: space-between;
-  height: 80px;
-  z-index: 1;
-  width: 100%;
-  max-width: 1300px;
-  margin: 0 auto;
-  padding: 0 40px;
-}
-.logo {
-  width: 130px;
-  height: auto;  
-  display: inline-block; 
-}
-.navbar__menu {
-  display: flex;
-  align-items: center;
-  list-style: none;
-  text-align: center;
-}
-.navbar__item {
-  height: 70px;
-}
-.navbar__links {
-  color: #529ca4;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  padding: 0 1rem;
-  height: 100%;
-}
-.navbar__links:hover {
-  color: rgb(155, 224, 201);
-  transition: all 0.3s ease;
+
+.navbar h1 {
+  color: #ffffff;
 }
 
-/* Main Section Styles */
+/* Main Layout */
 .main {
-  background-color: aliceblue;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 20px;
+  flex-direction: column;
+  height: 100vh;
 }
+
+/* Sidebar + Map Container */
 .main__container {
   display: flex;
-  grid-template-columns: 1fr;
-  align-items: flex-start;
-  justify-self: center;
-  margin: 0 auto;
-  height: auto;
-  background-color: aliceblue;
-  z-index: 1;
   width: 100%;
-  max-width: 1300px;
-  padding: 0 40px;
-  position: relative;
+  flex-grow: 1;
+  background-color: #ffffff;
 }
-.main__content {
+
+/* Sidebar */
+.sidebar {
+  width: 20%;
+  background-color: #b4cedc;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset -2px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar h2 {
+  font-size: 24px;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.sidebar p {
+  font-size: 14px;
   margin-bottom: 20px;
+}
+
+.sidebar h3 {
+  font-size: 20px;
+  color: #2c3e50;
+  margin-top: 90px; 
   text-align: center;
 }
-.main__content h1 {
-  font-size: 1.8rem;
-  color: #3896a2;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  margin-top: 20px;
+
+.region-name h2 {
+  font-size: 20px;
+  color: #2c3e50;
+  margin-top: 10px; 
   text-align: center;
 }
-/* Map Styles */
+
+/* Map Container */
+
 .map__container {
-  width: 600px; 
-  height: 400px; 
+  display: flex;
+  width: 100%; 
+  height: 450px; 
   position: top;
-  margin-top: 100px;
-  border: 2px solid #ccc; 
+  margin-top: 10px;
   padding: 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); 
-  background-color: #f9f9f9;
-  align-self: left;
+  background-color: #ffffff;
+  align-self: flex-start;
 }
 #map {
   width: 100%; 
   height: 100%; 
-  overflow: hidden; 
-}
-/* Region Data Styles */
-.region-data {
-  margin-top: 20px; 
-  text-align: left;
-}
-.region-data h2, .region-data p {
-  margin: 10px 0; 
-}
-.region-data h3 {
-  position: absolute;
-  font-size: 1rem;
-  padding: 100px;
 }
 
+/* Statistics Row */
+.statistics {
+  display: flex;
+  width: 100%;
+  background-color: #94c9cf;
+  justify-content: space-around;
+  padding: 10px 0;
+}
+
+/* Each Statistic */
+.statistic {
+  width: 20%; /* 5 statistics will fit side-by-side */
+  padding: 20px;
+  text-align: center;
+  height: 190px;
+}
+
+.statistic strong {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.statistic p {
+  font-size: 24px;
+}
