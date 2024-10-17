@@ -84,10 +84,10 @@
 .map__container {
   display: flex;
   width: 100%; 
-  height: 450px; 
+  height: 100%; 
   position: top;
-  margin-top: 10px;
-  padding: 10px;
+  margin-top: 0;
+  padding: 0;
   background-color: #ffffff;
   align-self: flex-start;
 }
@@ -107,7 +107,7 @@
 
 /* Each Statistic */
 .statistic {
-  width: 20%; /* 5 statistics will fit side-by-side */
+  width: 20%; 
   padding: 20px;
   text-align: center;
   height: 190px;
