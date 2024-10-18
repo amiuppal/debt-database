@@ -12,9 +12,6 @@ export default function App() {
 
   return (
     <>
-    <head>
-      <title>UK Debt Database</title>
-    </head>
       <Navbar />
       <div className="main">
         <div className="main__container">
